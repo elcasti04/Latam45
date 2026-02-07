@@ -2,7 +2,9 @@
 // CONFIGURACIÓN
 // ===============================
 const UPDATE_INTERVAL = 10000;
+const CLOCK_INTERVAL = 1000;
 let autoTimer = null;
+let clockTimer = null;
 
 // ===============================
 // UTILIDAD: TIMESTAMP
@@ -12,11 +14,14 @@ function updateTimestamp() {
   if (!el) return;
 
   const now = new Date();
-  el.textContent =
-    "Actualizado: " +
-    now.toLocaleDateString("es-CO") +
-    " " +
-    now.toLocaleTimeString("es-CO");
+  const dateStr = now.toLocaleDateString("es-CO");
+  const timeStr = now.toLocaleTimeString("es-CO", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
+  el.textContent = `Actualizado: ${dateStr} ${timeStr}`;
 }
 
 // ===============================
@@ -141,9 +146,31 @@ function stopAutoUpdate() {
 // BOTONES
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
+  // Botón de refresco manual
   document
     .getElementById("btn-refresh")
     ?.addEventListener("click", loadDataAndRender);
 
-  startAutoUpdate();
+  // Toggle de auto-actualización
+  const btnAuto = document.getElementById("btn-toggle-auto");
+  if (btnAuto) {
+    btnAuto.addEventListener("click", () => {
+      if (autoTimer) {
+        stopAutoUpdate();
+        btnAuto.textContent = "Auto: OFF";
+      } else {
+        startAutoUpdate();
+        btnAuto.textContent = "Auto: ON";
+      }
+    });
+  }
+
+  // Render inicial sin auto
+  loadDataAndRender();
+
+  // Inicia reloj en vivo de la hora (HH:MM:SS)
+  if (!clockTimer) {
+    updateTimestamp();
+    clockTimer = setInterval(updateTimestamp, CLOCK_INTERVAL);
+  }
 });
