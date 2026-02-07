@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' http://127.0.0.1:5500 http://localhost:*; img-src 'self' data: https:; font-src 'self' data:; frame-src *;">
   <title>Detalle Activo</title>
-  <link rel="stylesheet" href="assets/detalle.css" />
+  <link rel="stylesheet" href="./assets/detalle.css" />
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -62,6 +63,6 @@
 
   </main>
 
-  <script src="assets/detalle.js"></script>
+  <script src="./assets/detalle.js"></script>
 </body>
 </html>

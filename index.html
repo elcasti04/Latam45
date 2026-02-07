@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' http://127.0.0.1:5500 http://localhost:*; img-src 'self' data: https:; font-src 'self' data:; frame-src *;">
   <title>LATAM 45 Index - Market Monitor (Web)</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
   <header class="app-header">
@@ -38,6 +39,6 @@
     </div>
   </footer>
 
-  <script src="assets/notebook.js" defer></script>
+  <script src="./notebook.js" defer></script>
 </body>
 </html>

@@ -60,7 +60,7 @@ function renderGrid(data) {
 
     const link = document.createElement("a");
     link.className = "card-link";
-    link.href = `detalle.html?ticker=${row.ticker}`;
+    link.href = `./site/detalle.html?ticker=${row.ticker}`;
 
     link.innerHTML = `
       <div class="card-stock" style="border-top:4px solid ${color}">
