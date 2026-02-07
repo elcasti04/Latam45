@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LATAM 45 Index - Market Monitor (Web)</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container">
+      <h1>🏛️ LATAM 45 INDEX - MARKET MONITOR</h1>
+      <p class="subtitle">
+        Visualización financiera de 45 activos estratégicos (ADRs y locales) con lógica de momentum
+      </p>
+      <div class="controls">
+        <button id="btn-refresh" class="btn btn-primary">Actualizar</button>
+        <button id="btn-toggle-auto" class="btn">Auto: OFF</button>
+        <span id="last-update" class="last-update"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="stats" class="stats"></section>
+
+    <section id="grid" class="grid-wrapper grid-latam"></section>
+
+    <section id="legend" class="legend"></section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <small>
+        Versión web sin dependencias de Python. Datos simulados para uso offline.
+        Enlaces a gráficos por TradingView.
+      </small>
+    </div>
+  </footer>
+
+  <script src="assets/notebook.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle Activo</title>
+  <link rel="stylesheet" href="assets/detalle.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="tv-page">
+
+  <header class="tv-topbar">
+    <div class="logo">TradingView</div>
+    <input class="search" placeholder="Buscar (Ctrl+K)" />
+    <nav>
+      <a>Productos</a>
+      <a>Comunidad</a>
+      <a class="active">Mercados</a>
+      <a>Brokers</a>
+    </nav>
+  </header>
+
+  <main class="tv-container">
+
+    <section class="asset-header">
+      <div class="asset-left">
+        <div class="asset-logo">ULTRA</div>
+        <div>
+          <h1 id="asset-name">Ultrapar Participacoes S.A.</h1>
+          <span id="asset-symbol">UGPA3 · BMFBOVESPA</span>
+        </div>
+      </div>
+
+      <div class="asset-price">
+        <div class="price" id="price">26,67</div>
+        <div class="change positive" id="change">+0,55 (+2,11%)</div>
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <a class="active">Resumen</a>
+      <a>Información financiera</a>
+      <a>Noticias</a>
+      <a>Datos técnicos</a>
+      <a>Previsiones</a>
+    </nav>
+
+    <section class="chart-box">
+      <canvas id="chart" height="260"></canvas>
+    </section>
+
+    <section class="metrics">
+      <div><strong>Capitalización</strong>28,508B</div>
+      <div><strong>Dividendo</strong>6,18%</div>
+      <div><strong>P/E (TTM)</strong>9,77</div>
+      <div><strong>BPA</strong>2,73</div>
+      <div><strong>Empleados</strong>9.560</div>
+      <div><strong>Sector</strong>Comercio minorista</div>
+    </section>
+
+  </main>
+
+  <script src="assets/detalle.js"></script>
+</body>
+</html>
